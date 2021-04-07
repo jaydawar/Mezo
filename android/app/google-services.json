@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "733878812604",
+    "firebase_url": "https://mezzo-f50ec.firebaseio.com",
+    "project_id": "mezzo-f50ec",
+    "storage_bucket": "mezzo-f50ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733878812604:android:b5aeef801b476d4c58f5b9",
+        "android_client_info": {
+          "package_name": "com.mezzo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733878812604-ud8kudlrdk354sopu0s2p8rl8qgmr5ar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mezzo.app",
+            "certificate_hash": "128f3c9d0e6b9f2c48fde6b8b9bacc176ea3c3ea"
+          }
+        },
+        {
+          "client_id": "733878812604-74nie5jo386mmqk5feb83k0ic6ul8cav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWzsZoNOyODpGcdG74lFyske1k22RmGGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733878812604-74nie5jo386mmqk5feb83k0ic6ul8cav.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "733878812604-29liq9k6aanv2s94ckuo8p2rv1kihcpe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mezzo.devapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

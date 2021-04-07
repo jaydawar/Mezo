@@ -1,0 +1,11 @@
+<svg id="ic_s_terms" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="ic_s_terms-2" data-name="ic_s_terms">
+    <rect id="Icon" width="32" height="32" rx="7" fill="#fca25d"/>
+    <g id="Rectangle_7" data-name="Rectangle 7" transform="translate(8 8)" fill="none" stroke-miterlimit="10">
+      <path d="M0,2A2,2,0,0,1,2,0H14a2,2,0,0,1,2,2V14a2,2,0,0,1-2,2H4V14.5a2,2,0,0,0-2-2H0Z" stroke="none"/>
+      <path d="M 2 1.5 C 1.724300384521484 1.5 1.5 1.724300384521484 1.5 2 L 1.5 11 L 2 11 C 3.929909706115723 11 5.5 12.57009029388428 5.5 14.5 L 14 14.5 C 14.27569961547852 14.5 14.5 14.27569961547852 14.5 14 L 14.5 2 C 14.5 1.724300384521484 14.27569961547852 1.5 14 1.5 L 2 1.5 M 2 0 L 14 0 C 15.10457038879395 0 16 0.8954296112060547 16 2 L 16 14 C 16 15.10457038879395 15.10457038879395 16 14 16 L 4 16 L 4 14.5 C 4 13.39542961120605 3.104570388793945 12.5 2 12.5 L 0 12.5 L 0 2 C 0 0.8954296112060547 0.8954296112060547 0 2 0 Z" stroke="none" fill="#fff"/>
+    </g>
+    <path id="Line" d="M.5.75h5" transform="translate(13 12)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+    <path id="Line-2" data-name="Line" d="M.5.75h5" transform="translate(13 16)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+  </g>
+</svg>

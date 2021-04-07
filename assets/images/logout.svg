@@ -1,0 +1,8 @@
+<svg id="ic_s_logout" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="ic_s_logout-2" data-name="ic_s_logout">
+    <rect id="Icon" width="32" height="32" rx="7" fill="#fca25d"/>
+    <path id="Rectangle_8" data-name="Rectangle 8" d="M12,10.417V15H0V0H12V5.5" transform="translate(8 8)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.5"/>
+    <path id="Line" d="M0,0H9" transform="translate(16.5 16.054)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+    <path id="Rectangle_9" data-name="Rectangle 9" d="M0,0H6V6" transform="translate(22.243 11.8) rotate(45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.5"/>
+  </g>
+</svg>
