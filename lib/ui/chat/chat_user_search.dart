@@ -62,7 +62,7 @@ class _ChatUserSearchState extends State<ChatUserSearch> {
                     userlist = [];
                     userlist.addAll(snapshot.data.docs);
                     userlist.removeWhere((element) =>
-                        element.data()['uid'] == currentUserIdValue);
+                        element['uid'] == currentUserIdValue);
                     print("userLength${userlist.length}");
                     return ListView.builder(
                         itemCount: userlist.length,

@@ -89,7 +89,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: _buildFab(context),
-      body: BlocBuilder(
+      /* BlocBuilder(
           cubit: _navbarBloc,
           builder: (BuildContext context, NavbarState state) {
             if (state is HomeTab)
@@ -98,7 +98,7 @@ class _DashboardPageState extends State<DashboardPage> {
             if (state is AddTripTab) return AddTripScreen();
             if (state is TripTab) return TripsListScreen();
             if (state is ProfileTab) return ProfileScreen();
-          }),
+          }),*/
     );
   }
 

@@ -157,9 +157,9 @@ class ChatScreenState extends State<ChatScreen> {
 
   Future uploadFile() async {
     String fileName = DateTime.now().millisecondsSinceEpoch.toString();
-    StorageReference reference = FirebaseStorage.instance.ref().child(fileName);
-    StorageUploadTask uploadTask = reference.putFile(imageFile);
-    StorageTaskSnapshot storageTaskSnapshot = await uploadTask.onComplete;
+    Reference reference = FirebaseStorage.instance.ref().child(fileName);
+    UploadTask uploadTask = reference.putFile(imageFile);
+    TaskSnapshot storageTaskSnapshot = await uploadTask.whenComplete((){});
     storageTaskSnapshot.ref.getDownloadURL().then((downloadUrl) {
       imageUrl = downloadUrl;
       setState(() {
@@ -208,15 +208,15 @@ class ChatScreenState extends State<ChatScreen> {
   }
 
   Widget buildItem(int index, DocumentSnapshot document) {
-    if (document.data()['idFrom'] == id) {
+    if (document.data()== id) {
       // Right (my message)
       return Row(
         children: <Widget>[
-          document.data()['type'] == 0
+          document['type'] == 0
               // Text
               ? Container(
                   child: Text(
-                    document.data()['content'],
+                    document['content'],
                     style: TextStyle(color: primaryColor),
                   ),
                   padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
@@ -228,7 +228,7 @@ class ChatScreenState extends State<ChatScreen> {
                       bottom: isLastMessageRight(index) ? 20.0 : 10.0,
                       right: 10.0),
                 )
-              : document.data()['type'] == 1
+              : document['type'] == 1
                   // Image
                   ? Container(
                       child: FlatButton(
@@ -261,7 +261,7 @@ class ChatScreenState extends State<ChatScreen> {
                               ),
                               clipBehavior: Clip.hardEdge,
                             ),
-                            imageUrl: document.data()['content'],
+                            imageUrl: document['content'],
                             width: 200.0,
                             height: 200.0,
                             fit: BoxFit.cover,
@@ -285,7 +285,7 @@ class ChatScreenState extends State<ChatScreen> {
                   // Sticker
                   : Container(
                       child: Image.asset(
-                        'images/${document.data()['content']}.gif',
+                        'images/${document['content']}.gif',
                         width: 100.0,
                         height: 100.0,
                         fit: BoxFit.cover,
@@ -328,10 +328,10 @@ class ChatScreenState extends State<ChatScreen> {
                         clipBehavior: Clip.hardEdge,
                       )
                     : Container(width: 35.0),
-                document.data()['type'] == 0
+                document['type'] == 0
                     ? Container(
                         child: Text(
-                          document.data()['content'],
+                          document['content'],
                           style: TextStyle(color: Colors.white),
                         ),
                         padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
@@ -341,7 +341,7 @@ class ChatScreenState extends State<ChatScreen> {
                             borderRadius: BorderRadius.circular(8.0)),
                         margin: EdgeInsets.only(left: 10.0),
                       )
-                    : document.data()['type'] == 1
+                    : document['type'] == 1
                         ? Container(
                             child: FlatButton(
                               child: Material(
@@ -374,7 +374,7 @@ class ChatScreenState extends State<ChatScreen> {
                                     ),
                                     clipBehavior: Clip.hardEdge,
                                   ),
-                                  imageUrl: document.data()['content'],
+                                  imageUrl: document['content'],
                                   width: 200.0,
                                   height: 200.0,
                                   fit: BoxFit.cover,
@@ -396,7 +396,7 @@ class ChatScreenState extends State<ChatScreen> {
                           )
                         : Container(
                             child: Image.asset(
-                              'images/${document.data()['content']}.gif',
+                              'images/${document['content']}.gif',
                               width: 100.0,
                               height: 100.0,
                               fit: BoxFit.cover,
@@ -414,7 +414,7 @@ class ChatScreenState extends State<ChatScreen> {
                     child: Text(
                       DateFormat('dd MMM kk:mm').format(
                           DateTime.fromMillisecondsSinceEpoch(
-                              int.parse(document.data()['timestamp']))),
+                              int.parse(document['timestamp']))),
                       style: TextStyle(
                           color: greyColor,
                           fontSize: 12.0,
@@ -434,7 +434,7 @@ class ChatScreenState extends State<ChatScreen> {
   bool isLastMessageLeft(int index) {
     if ((index > 0 &&
             listMessage != null &&
-            listMessage[index - 1].data()['idFrom'] == id) ||
+            listMessage[index - 1]['idFrom'] == id) ||
         index == 0) {
       return true;
     } else {
@@ -445,7 +445,7 @@ class ChatScreenState extends State<ChatScreen> {
   bool isLastMessageRight(int index) {
     if ((index > 0 &&
             listMessage != null &&
-            listMessage[index - 1].data()['idFrom'] != id) ||
+            listMessage[index - 1]['idFrom'] != id) ||
         index == 0) {
       return true;
     } else {

@@ -29,7 +29,7 @@ class HomeScreenState extends State<HomeScreen> {
   HomeScreenState({Key key, @required this.currentUserId});
 
   final String currentUserId;
-  final FirebaseMessaging firebaseMessaging = FirebaseMessaging();
+  FirebaseMessaging firebaseMessaging ;
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
@@ -254,7 +254,7 @@ class HomeScreenState extends State<HomeScreen> {
           child: Row(
             children: <Widget>[
               Material(
-                child: document.data()['profileUrl'] != null
+                child: document["profileUrl"] != null
                     ? CachedNetworkImage(
                         placeholder: (context, url) => Container(
                           child: CircularProgressIndicator(
@@ -266,7 +266,7 @@ class HomeScreenState extends State<HomeScreen> {
                           height: 50.0,
                           padding: EdgeInsets.all(15.0),
                         ),
-                        imageUrl: document.data()['profileUrl'],
+                        imageUrl: document['profileUrl'],
                         width: 50.0,
                         height: 50.0,
                         fit: BoxFit.cover,
@@ -285,7 +285,7 @@ class HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Container(
                         child: Text(
-                          'userName: ${document.data()['userName']}',
+                          'userName: ${document['userName']}',
                           style: TextStyle(color: primaryColor),
                         ),
                         alignment: Alignment.centerLeft,
@@ -293,7 +293,7 @@ class HomeScreenState extends State<HomeScreen> {
                       ),
                       Container(
                         child: Text(
-                          'fullName: ${document.data()['fullName'] ?? 'Not available'}',
+                          'fullName: ${document['fullName'] ?? 'Not available'}',
                           style: TextStyle(color: primaryColor),
                         ),
                         alignment: Alignment.centerLeft,
@@ -312,7 +312,7 @@ class HomeScreenState extends State<HomeScreen> {
                 MaterialPageRoute(
                     builder: (context) => Chat(
                           peerId: document.id,
-                          peerAvatar: document.data()['profileUrl'],
+                          peerAvatar: document['profileUrl'],
                         )));
           },
           color: greyColor2,

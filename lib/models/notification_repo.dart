@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:app/push_notifications/notifiaction_model.dart';
 import 'package:app/ui/trips/model/trip_model_data.dart';
 import 'package:app/ui/trips/trips_screen.dart';

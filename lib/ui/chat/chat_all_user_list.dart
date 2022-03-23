@@ -74,7 +74,7 @@ class _ChatAllUserListState extends State<ChatAllUserList> {
                     userlist=[];
                     userlist.addAll(snapshot.data.documents);
                     userlist.removeWhere((element) =>
-                        element.data()['uid'] == currentUserIdValue);
+                        element['uid'] == currentUserIdValue);
                     print("userLength${userlist.length}");
                     return ListView.builder(
                         itemCount: userlist.length,

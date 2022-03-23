@@ -131,7 +131,7 @@ class _OtpState extends State<OtpScreen> {
     return Scaffold(
       backgroundColor: ColorResources.app_primary_color,
       resizeToAvoidBottomInset: false,
-      resizeToAvoidBottomPadding: false,
+    //  resizeToAvoidBottomPadding: false,
       body: Stack(
         children: <Widget>[
           HeaderToolBar(

@@ -42,7 +42,7 @@ class _EnterPhoneState extends State<EnterPhoneScreen> {
     return Scaffold(
       backgroundColor: ColorResources.app_primary_color,
       resizeToAvoidBottomInset: false,
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         controller: ScrollController(),
         padding: EdgeInsets.zero,
@@ -252,7 +252,7 @@ class _EnterPhoneState extends State<EnterPhoneScreen> {
         controller: _phoneController,
         inputFormatters: [
           LengthLimitingTextInputFormatter(10),
-          WhitelistingTextInputFormatter(RegExp("[0-9]"))
+          //WhitelistingTextInputFormatter(RegExp("[0-9]"))
         ],
         onSubmitted: (phone) {
           phoneNo = phone;
@@ -285,7 +285,7 @@ class _EnterPhoneState extends State<EnterPhoneScreen> {
       controller: _phoneController,
       inputFormatters: [
         LengthLimitingTextInputFormatter(10),
-        WhitelistingTextInputFormatter(RegExp("[0-9]"))
+       // WhitelistingTextInputFormatter(RegExp("[0-9]"))
       ],
       onChanged: (value) {
         phoneNo = value;

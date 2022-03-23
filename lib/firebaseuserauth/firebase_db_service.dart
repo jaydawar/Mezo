@@ -336,11 +336,11 @@ class FirebaseDbService {
       String filePath,
       Function(int) callBackCode,
       Function(String) fileUploaded}) async {
-    StorageReference storageReference = FirebaseStorage.instance
+    Reference storageReference = FirebaseStorage.instance
         .ref()
         .child('$bucketName/${Path.basename(filePath)}}');
-    StorageUploadTask uploadTask = storageReference.putFile(File(filePath));
-    await uploadTask.onComplete;
+    UploadTask uploadTask = storageReference.putFile(File(filePath));
+    await uploadTask.whenComplete(() {});
     print('File Uploaded');
     storageReference.getDownloadURL().then((fileURL) {
       print('fileURLFile Uploaded$fileURL');

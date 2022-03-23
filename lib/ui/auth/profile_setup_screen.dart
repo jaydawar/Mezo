@@ -43,7 +43,7 @@ class _ProfileSetUpState extends State<ProfileSetUpScreen> {
   var isLoading = false;
   String _uploadedFileURL = "";
   AppConstantHelper appConstantHelper = AppConstantHelper();
-  final FirebaseMessaging firebaseMessaging = FirebaseMessaging();
+   FirebaseMessaging firebaseMessaging ;
   FirebaseDbService firebaseUserAuth = FirebaseDbService();
 
   @override

@@ -58,14 +58,16 @@ class AppConstantHelper {
     }
   }
 
-  File imageFile;
+  var imageFile;
 
   Future<Null> pickImage({bool isCamera, Function(File) imagePicked}) async {
     imageFile = isCamera
-        ? await ImagePicker.pickImage(
+        ? await ImagePicker.platform.pickImage(
             source: ImageSource.camera,
           )
-        : await ImagePicker.pickImage(source: ImageSource.gallery);
+        : await ImagePicker.platform.pickImage(
+      source: ImageSource.camera,
+    );
 
     if (imageFile != null) {
       print("imageFile>>${imageFile.path}");
@@ -87,7 +89,7 @@ class AppConstantHelper {
     bool isCircular,
     File imageFile,
   ) async {
-    File croppedFile = await ImageCropper.cropImage(
+    File croppedFile = await ImageCropper().cropImage(
       sourcePath: imageFile.path,
       cropStyle: CropStyle.circle,
       aspectRatio: CropAspectRatio(

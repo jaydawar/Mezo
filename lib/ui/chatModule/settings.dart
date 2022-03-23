@@ -88,11 +88,11 @@ class SettingsScreenState extends State<SettingsScreen> {
 
   Future uploadFile() async {
     String fileName = id;
-    StorageReference reference = FirebaseStorage.instance.ref().child(fileName);
-    StorageUploadTask uploadTask = reference.putFile(avatarImageFile);
-    StorageTaskSnapshot storageTaskSnapshot;
-    uploadTask.onComplete.then((value) {
-      if (value.error == null) {
+    Reference reference = FirebaseStorage.instance.ref().child(fileName);
+    UploadTask uploadTask = reference.putFile(avatarImageFile);
+    TaskSnapshot storageTaskSnapshot;
+    uploadTask.whenComplete(() {}).then((value) {
+      if (value == null) {
         storageTaskSnapshot = value;
         storageTaskSnapshot.ref.getDownloadURL().then((downloadUrl) {
           photoUrl = downloadUrl;
