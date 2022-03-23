@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:app/push_notifications/notifiaction_model.dart';
 import 'package:app/ui/trips/model/trip_model_data.dart';
 import 'package:app/ui/trips/trips_screen.dart';
@@ -7,6 +5,7 @@ import 'package:app/utils/app_constants.dart';
 import 'package:app/utils/serialization_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:rxdart/rxdart.dart';
 

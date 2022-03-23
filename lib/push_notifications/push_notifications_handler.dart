@@ -35,7 +35,7 @@ class PushNotificationsHandler extends NavigatorObserver {
       _requestPermissionOniOS();
 
     } else if (Platform.isAndroid) {
-      _firebaseMessaging.getToken().then((token) => UserRepo.getInstance().setFCMToken(token));
+      /*_firebaseMessaging.getToken().then((token) => UserRepo.getInstance().setFCMToken(token));*/
     }
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
