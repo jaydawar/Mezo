@@ -50,7 +50,7 @@ class FirestorePaths {
 
 class FcmPushNotifications {
   static const String SERVR_KEY =
-      "AAAAqt6V_7w:APA91bGplMWwZlo0G5RihZ4DONoB84X4jPIdPrmy0KFoRQq0jZAiFgHesnlXCPLOuRWYPVYiU3TXr-QoF4JMMYBF3IhgScg6FWPuI3dw608EHFY-oQRA_Rz8Ap74bBdAMjyLuizMg0WU";
+      "AAAAnXx0aqk:APA91bGbnehRpBSfspy9sTeRsMOOjY7VD9jBj-DWvBTHoY31vJq184L29C4RmyBYy3I7gloqsK9oA9o1zMMHJwdB6bNHAlvWEqoXyINN4wZsIWbogZnZ-QwfRffAvzm4pj8a_RavOebe";
 
   static var CLICK_ACTION = "FLUTTER_NOTIFICATION_CLICK";
 

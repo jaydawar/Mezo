@@ -16,9 +16,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:async';
 import 'dashboard_bloc.dart';
-
+PageController _pageController = PageController();
 class DashboardPage extends StatefulWidget {
-  int initialIndex;
+ int initialIndex ;
   DashboardPage({this.initialIndex});
   @override
   State<StatefulWidget> createState() {
@@ -28,16 +28,20 @@ class DashboardPage extends StatefulWidget {
 
 class _DashboardPageState extends State<DashboardPage> {
   NavbarBloc _navbarBloc;
-
+  List<Widget> _screens =[];
+ int Selectedindex=0;
   @override
   void initState() {
     updateDeviceToken();
+    widget.initialIndex==0;
     if(widget.initialIndex==null) {
       _navbarBloc = NavbarBloc(HomeTab());
     }else{
       _navbarBloc = NavbarBloc(TripTab());
     }
+    _screens = [HomeScreen(),ChatUserListScreen(),AddTripScreen(),TripsListScreen(),ProfileScreen()
 
+    ];
     super.initState();
   }
 
@@ -67,14 +71,18 @@ class _DashboardPageState extends State<DashboardPage> {
           switch (index) {
             case 0:
               _navbarBloc.add(NavbarItems.Home);
+
               break;
             case 1:
               _navbarBloc.add(NavbarItems.Chat);
               break;
             case 2:
-              _navbarBloc.add(NavbarItems.Trips);
+              _navbarBloc.add(NavbarItems.AddTrip);
               break;
             case 3:
+              _navbarBloc.add(NavbarItems.Trips);
+              break;
+            case 4:
               _navbarBloc.add(NavbarItems.Profile);
               break;
           }
@@ -82,14 +90,23 @@ class _DashboardPageState extends State<DashboardPage> {
         items: [
           FABBottomAppBarItem(iconPath: ImageResource.tab1, text: 'Home'),
           FABBottomAppBarItem(iconPath: ImageResource.tab2, text: 'Chat'),
+          FABBottomAppBarItem(iconPath: ImageResource.tab5, text: 'Add'),
           FABBottomAppBarItem(iconPath: ImageResource.tab3, text: 'Trip'),
           FABBottomAppBarItem(iconPath: ImageResource.tab4, text: 'Profile'),
         ],
       ),
 
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: _buildFab(context),
-      /* BlocBuilder(
+    //  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    //  floatingActionButton: _buildFab(context),
+      body:PageView.builder(
+        controller: _pageController,
+        itemCount: _screens.length,
+        physics: NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index){
+          return  _screens[widget.initialIndex??0];
+        },
+      ),
+  /*    BlocBuilder(
           cubit: _navbarBloc,
           builder: (BuildContext context, NavbarState state) {
             if (state is HomeTab)
@@ -102,7 +119,7 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  _buildFab(BuildContext context) {
+ /* _buildFab(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
         widget.initialIndex=-1;
@@ -153,7 +170,7 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
       elevation: 2.0,
     );
-  }
+  }*/
 
   void updateDeviceToken() async{
     var deviceToken=await UserRepo.getInstance().getFCMToken();

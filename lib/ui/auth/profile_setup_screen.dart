@@ -49,9 +49,9 @@ class _ProfileSetUpState extends State<ProfileSetUpScreen> {
   @override
   void initState() {
     appConstantHelper.setContext(context);
-    firebaseMessaging.getToken().then((value) {
+   /* firebaseMessaging.getToken().then((value) {
       deviceToken = value;
-    });
+    });*/
     super.initState();
   }
 

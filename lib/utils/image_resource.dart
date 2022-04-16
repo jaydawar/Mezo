@@ -10,6 +10,7 @@ class ImageResource {
   static String profile = 'assets/images/profile.png';
   static String tab1 = 'assets/images/home_unselect.svg';
   static String tab2 = 'assets/images/chat_unselect.svg';
+  static String tab5 = 'assets/images/add_icon.svg';
   static String tab3 = 'assets/images/location_unselect.svg';
   static String tab4 = 'assets/images/profile_unselect.svg';
 

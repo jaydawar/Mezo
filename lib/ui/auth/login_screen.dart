@@ -57,10 +57,9 @@ class LoginScreen extends StatelessWidget {
         child: Container(
           decoration: bottomCardDecoration(),
           width: MediaQuery.of(context).size.width,
-          height: 383,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+          height: MediaQuery.of(context).size.height-20,
+          child: ListView(scrollDirection: Axis.vertical,shrinkWrap: true,
+
             children: <Widget>[
               SizedBox(
                 height: 54.0,

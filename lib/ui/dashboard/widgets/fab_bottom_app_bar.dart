@@ -24,7 +24,7 @@ class FABBottomAppBar extends StatefulWidget {
     this.notchedShape,
     this.onTabSelected,
   }) {
-    assert(this.items.length == 2 || this.items.length == 4);
+    assert(this.items.length == 2 || this.items.length == 5);
   }
 
   final List<FABBottomAppBarItem> items;
@@ -102,9 +102,53 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
         height: widget.height,
         child: Material(
           type: MaterialType.transparency,
-          child: InkWell(
+          child:InkWell(
             onTap: () => onPressed(index),
-            child: Center(
+            child:index==2?Padding(
+
+              padding: const EdgeInsets.only(right: 0.0),
+
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                      color: const Color(0xfffca25d),
+                      border: Border.all(width: 4.0, color: const Color(0xffffffff)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0x19000000),
+                          offset: Offset(5, 5),
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                      color: const Color(0xfffca25d),
+                      border: Border.all(width: 4.0, color: const Color(0xffffffff)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xffffffff),
+                          offset: Offset(-5, -5),
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                  ),
+
+                ],
+              ),
+            ) : Center(
               child: SvgPicture.asset(
                 item.iconPath,
                 color: color,

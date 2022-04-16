@@ -53,7 +53,7 @@ class PushNotificationsHandler extends NavigatorObserver {
   }
 
   void _requestPermissionOniOS() {
-    _firebaseMessaging.requestPermission(sound: true, badge: true, alert: true);
+  //  _firebaseMessaging.requestPermission(sound: true, badge: true, alert: true);
    /* _firebaseMessaging.onIosSettingsRegistered.first.then((settings) {
       if (settings.alert) {
         _firebaseMessaging.getToken().then((token)            {
