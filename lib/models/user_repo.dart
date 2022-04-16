@@ -68,7 +68,7 @@ class UserRepo {
             (value) => prefs.setString(StorageKeys.USER_ADDRESS, user.address))
         .then(
             (value) => prefs.setInt(StorageKeys.USER_CREATEDAT, user.createdAt))
-        .then((value) => prefs.setString(StorageKeys.FCM_TOKEN, user.deviceToken));
+        .then((value) => prefs.setString(StorageKeys.FCM_TOKEN, user.deviceToken??""));
   }
 
   void clearCurrentUser() async {
